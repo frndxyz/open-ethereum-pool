@@ -1,43 +1,71 @@
 <div class="container">
   <div class="page-header">
-    <h1>How To Mine</h1>
+    <h1>How To Mine, some Examples</h1>
   </div>
-  <p class="lead">In order to mine on this pool you need to have an
-    <a href="https://github.com/ethereum/webthree-umbrella/releases" rel="nofollow" target="_blank">ethminer</a> installation
-    pointed to<br/><code>{{config.HttpHost}}:{{config.HttpPort}}/YOUR_ETH_ADDRESS/RIG_ID</code>
+  <p class="lead">Stratum Mining with <a href="https://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank">Claymore</a>
   </p>
   <dl class="dl-horizontal">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
-      <strong>Example:</strong> <code>0xb85150eb365e7df0941f0cf08235f987ba91506a</code>.
+    <dt>Windows</dt>
+    <dd><code>EthDcrMiner64.exe -epool stratum+tcp://{{config.StratumHost}}:{{config.StratumPort2b}} -ewal 0x5c78d6b136b129eb09ff06115669763e5c39cf01 -epsw x -allcoins -1 -eworker rig1</code>
     </dd>
-    <dt>RIG_ID</dt>
+    <dt>Linux</dt>
     <dd>
-      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
-      This param must be short alphanumeric string with optional dashes and underscores.<br/>
-      <strong>Example:</strong> <code>rig-1</code>
+      <code>./ethdcrminer64 -epool stratum+tcp://{{config.StratumHost}}:{{config.StratumPort2b}} -ewal 0x5c78d6b136b129eb09ff06115669763e5c39cf01 -epsw x -allcoins -1 -eworker rig1</code>
     </dd>
   </dl>
-  <p>
-    <strong>Full example:</strong>
-    <code>ethminer -F {{config.HttpHost}}:{{config.HttpPort}}/0xb85150eb365e7df0941f0cf08235f987ba91506a/myfarm -G --farm-recheck 200</code>.<br/>
-    <span class="label label-info">Hint:</span> If you are compiling ethminer from latest source, please also use
-      extra <code>--disable-submit-hashrate</code> option.
+  <p class="lead">Stratum Mining with Genoil's Ethminer
   </p>
-
-  <h4>Stratum Mining with Stratum Proxy for Ethereum</h4>
-  <p class="lead">Grab proxy from <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">eth-proxy GitHub repo</a>.</p>
-  <p class="lead">Edit <code>eth-proxy.conf</code> and specify our pool's <code>HOST: {{config.StratumHost}}</code>, <code>PORT: {{config.StratumPort}}</code> and your <code>WALLET</code>.</p>
-
-  <h4>Mining with Ether-Proxy</h4>
-  <p class="lead">Use stable release of <a href="https://github.com/sammy007/ether-proxy/releases" target="_blank">Ethereum Solo/Pool Mining Proxy</a>.</p>
-
+  <dl class="dl-horizontal">
+    <dt>Windows OpenCL</dt>
+    <dd><code>ethminer.exe --farm-recheck 200 -G -S {{config.StratumHost}}:{{config.StratumPort2b}}  -SP 1 -O 0x5c78d6b136b129eb09ff06115669763e5c39cf01.rig1</code></dd>
+    <dt>Windows CUDA</dt>
+    <dd><code>ethminer.exe --farm-recheck 200 -U -S {{config.StratumHost}}:{{config.StratumPort2b}}  -SP 1 -O 0x5c78d6b136b129eb09ff06115669763e5c39cf01.rig1</code></dd>
+    <dt>Linux OpenCL</dt>
+    <dd><code>./ethminer --farm-recheck 200 -G -S {{config.StratumHost}}:{{config.StratumPort2b}}  -SP 1 -O 0x5c78d6b136b129eb09ff06115669763e5c39cf01.rig1</code></dd>
+    <dt>Linux CUDA</dt>
+    <dd><code>./ethminer --farm-recheck 200 -U -S {{config.StratumHost}}:{{config.StratumPort2b}}  -SP 1 -O 0x5c78d6b136b129eb09ff06115669763e5c39cf01.rig1</code></dd>
+  </dl>
+  <p class="lead">Getwork Mining with Genoil's Ethminer
+  </p>
+  <dl class="dl-horizontal">
+    <dt>Windows OpenCL</dt>
+    <dd><code>ethminer.exe -F {{config.HttpHost}}:{{config.HttpPort2b}}/0x5c78d6b136b129eb09ff06115669763e5c39cf01/rig1 -G --farm-recheck 200</code></dd>
+    <dt>Windows CUDA</dt>
+    <dd><code>ethminer.exe -F {{config.HttpHost}}:{{config.HttpPort2b}}/0x5c78d6b136b129eb09ff06115669763e5c39cf01/rig1 -U --farm-recheck 200</code></dd>
+    <dt>Linux OpenCL</dt>
+    <dd><code>./ethminer -F {{config.HttpHost}}:{{config.HttpPort2b}}/0x0x5c78d6b136b129eb09ff06115669763e5c39cf01/rig1 -G --farm-recheck 200</code></dd>
+    <dt>Linux CUDA</dt>
+    <dd><code>./ethminer -F {{config.HttpHost}}:{{config.HttpPort2b}}/0x0x5c78d6b136b129eb09ff06115669763e5c39cf01/rig1 -U --farm-recheck 200</code></dd>
+  </dl>
+  <p class="lead">Nicehash Mining
+  </p>
+  <dl class="dl-horizontal">
+    <dt>Server</dt>
+    <dd><code>{{config.StratumHost}}</code></dd>
+    <dt>Port</dt>
+    <dd><code>{{config.StratumPort4b}}</code></dd>
+    <dt>Username</dt>
+    <dd><code>your Wallet ID</code></dd>
+    <dt>Password</dt>
+    <dd><code>#</code></dd>
+  </dl>
+<br>
   <h4>Advice</h4>
-  <p>CPU mining is not recommended.</p>
+  <p>CPU mining is not recommended! Nevertheless, you can use it if you want to.</p>
   <h4>Terms of Service</h4>
-  <p>By using the pool you accept all possible risks related to experimental software usage.<br/>
+  <p>By using the pool you accept all possible risks related to experimental software usage.<br>
      Pool owner can't compensate any irreversible losses, but will do his best to prevent worst case.
   </p>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

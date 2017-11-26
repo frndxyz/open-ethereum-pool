@@ -5,6 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'open-ethereum-pool',
     environment: environment,
     rootURL: '/',
+    poolTitle:'PIRL mining pool',
+    coinTicker:'PIRL',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
@@ -15,15 +17,19 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '//example.net/',
+      ApiUrl: '//pirl.cryptopool.in/',
 
       // HTTP mining endpoint
-      HttpHost: 'http://example.net',
-      HttpPort: 8888,
+      HttpHost: 'http://pirl.cryptopool.in',
+      HttpPort2b: 8888,
+      HttpPort4b: 8889,
+      HttpPort8b: 8890,
 
       // Stratum mining endpoint
-      StratumHost: 'example.net',
-      StratumPort: 8008,
+      StratumHost: 'pirl.cryptopool.in',
+      StratumPort2b: 8008,      
+      StratumPort4b: 8009,     
+      StratumPort8b: 8010,
 
       // Fee and payout details
       PoolFee: '1%',

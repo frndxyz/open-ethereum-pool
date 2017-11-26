@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-5">
         <h1 style="font-size: 24px">
-          <strong>{{poolTitle}}</strong>
+          <strong>Open Ethereum Pool</strong>
         </h1>
         <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts run twice per day.<br/>
         <span class="label label-success">PROP</span> Stable and profitable pool with regular payouts.
@@ -43,7 +43,7 @@
 		Please choose the appropriate poolproxy depending on your Hashrate and the average frequency in which shares are submitted, alternatively according to your own desire. Since 2b is the default value you are on the safe side if you are unsure.
 		Ment is the single Worker Hashrate - as an example, if you have 5 Rigs with 200 MH each, which are shown as 5 Rigs, then you have to go to the 4 billion proxy, not the 9 billion! <span class="label label-success"><b>NICEHASH PASSWORD: #</b></span>
 		<br><br>
-		The payout rounds run at least two times per Day. As long as you can see <a href="{{config.HttpHost}}/#/payments">current payouts</a> all is working and you get paid when you are the next in line!
+		The payout rounds run at least two times per Day. As long as you can see <a href="http://pirl.minerpool.net/#/payments">current payouts</a> all is working and you get paid when you are the next in line!
 	</h5>
 
 <table border="0" width="100%">
@@ -51,59 +51,61 @@
 		<tr>
 		<td>
     			<h5 class="note note-info text-center">
-			<span class="label label-success">2b</span>&nbsp;<a href="{{config.HttpHost}}/#/help" title="CLICK FOR HELP"><b>RIG HASHRATE &lt; 100 MH/s</b></a>
+			<span class="label label-success">2b</span>&nbsp;<a href="http://pirl.minerpool.net/#/help" title="CLICK FOR HELP"><b>RIG HASHRATE &lt; 100 MH/s</b></a>
 			<br>
 			(difficulty 2 billion)
 			<br><br>
 			<b>Stratum Mining:</b>
 			<br><br>
-			<code>stratum+tcp://{{config.StratumHost}}:{{config.StratumPort2b}}</code>
+			<code>stratum+tcp://pirl.minerpool.net:8002</code>
     			<hr>
 			<b>Getwork Mining:</b>
 			<br><br>
-      			<code>{{config.HttpHost}}:{{config.HttpPort2b}}</code>
+      			<code>http://pirl.minerpool.net:8822</code>
     			</h5>
 		</td>
 		<td>
     			<h5 class="note note-info text-center">
-			<span class="label label-success">4b</span>&nbsp;<a href="{{config.HttpHost}}/#/help" title="CLICK FOR HELP"><b>WORKER / NICEHASH 100 - 800 MH/s</b></a>
+			<span class="label label-success">4b</span>&nbsp;<a href="http://pirl.minerpool.net/#/help" title="CLICK FOR HELP"><b>WORKER / NICEHASH 100 - 800 MH/s</b></a>
 			<br>
 			(difficulty 4 billion)
 			<br><br>
 			<b>Stratum Mining:</b>
 			<br><br>
-			<code>stratum+tcp://{{config.StratumHost}}:{{config.StratumPort4b}}</code>
+			<code>stratum+tcp://pirl.minerpool.net:8004</code>
     			<hr>
 			<b>Getwork Mining:</b>
 			<br><br>
-      			<code>{{config.HttpHost}}:{{config.HttpPort4b}}</code>
+      			<code>http://pirl.minerpool.net:8844</code>
     			</h5>
 		</td>
 		<td>
     			<h5 class="note note-info text-center">
-			<span class="label label-success">9b</span>&nbsp;<a href="{{config.HttpHost}}/#/help" title="CLICK FOR HELP"><b>WORKER / NICEHASH &gt; 800 MH/s</b></a>
+			<span class="label label-success">9b</span>&nbsp;<a href="http://pirl.minerpool.net/#/help" title="CLICK FOR HELP"><b>WORKER / NICEHASH &gt; 800 MH/s</b></a>
 			<br>
 			(difficulty 9 billion)
 			<br><br>
 			<b>Stratum Mining:</b>
 			<br><br>
-			<code>stratum+tcp://{{config.StratumHost}}:{{config.StratumPort8b}}</code>
+			<code>stratum+tcp://pirl.minerpool.net:8044</code>
     			<hr>
 			<b>Getwork Mining:</b>
 			<br><br>
-      			<code>{{config.HttpHost}}:{{config.HttpPort8b}}</code>
+      			<code>http://pirl.minerpool.net:8899</code>
     			</h5>
 		</td>
 		</tr>
 	</table>
 
-    
+    <h4 class="note note-info text-center">
+      ethminer.exe -F {{config.HttpHost}}:{{config.HttpPort}}/&lt;address&gt;/&lt;worker&gt; -G
+    </h4>
 <h4 class="note note-info text-center">
 	<b>Support:</b>
 	<br><br>
 	Discord:&nbsp;&nbsp;join <a href="https://discord.gg/z4faFxD" target="_new">PIRL DISCORD</a>
 	<br>
-	<font size="-1">(direct Message to the Pool Operator: hashgoal@gmail.com)</font>
+	<font size="-1">(direct Message to the Pool Operator: @chrls-pirl)</font>
     </h4>
 
   </div>
