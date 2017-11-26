@@ -21,22 +21,22 @@ module.exports = function(environment) {
 
       // HTTP mining endpoint
       HttpHost: 'http://pirl.cryptopool.in',
-      HttpPort2b: 8888,
-      HttpPort4b: 8889,
-      HttpPort8b: 8890,
+      HttpPort2b: 3336,
+      HttpPort4b: 3337,
+      HttpPort8b: 3338,
 
       // Stratum mining endpoint
       StratumHost: 'pirl.cryptopool.in',
-      StratumPort2b: 8008,      
-      StratumPort4b: 8009,     
-      StratumPort8b: 8010,
+      StratumPort2b: 9005,      
+      StratumPort4b: 9006,     
+      StratumPort8b: 9007,
 
       // Fee and payout details
-      PoolFee: '1%',
-      PayoutThreshold: '0.5 Ether',
+      PoolFee: '0%',
+      PayoutThreshold: '2 PIRL',
 
       // For network hashrate (change for your favourite fork)
-      BlockTime: 14.4
+      BlockTime: 8
     }
   };
 
